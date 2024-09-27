@@ -35,7 +35,7 @@ a {
 
 /* main container area beneath menu */
 main {
-    background: rgb(245, 238, 219);
+    background: rgb(68, 155, 226);
     display: flex;
 }
 .sidebar {
@@ -121,7 +121,7 @@ main {
 }
 
 #portfolio li {
-   background: #fff;
+   background: #9fb2db;
    padding: 10px;
    border-radius: 10px;
    margin-bottom: 10px;
