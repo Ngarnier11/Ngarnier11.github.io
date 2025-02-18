@@ -55,10 +55,11 @@ var init = function (window) {
             physikz.updatePosition(circles[3]);
             physikz.updatePosition(circles[4]);
             physikz.updatePosition(circles[5]);
-            for (var i= 0; i < circle.length; i++){
+            for (var i = 0; i < circles.length; i++) {
                 physikz.updatePosition(circles[i]);
                 game.checkCirclePosition(circles[i]);
             }
+ 
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
             game.checkCirclePosition(circles[1]);
@@ -80,23 +81,19 @@ var init = function (window) {
         game.checkCirclePosition = function(circle) {
 
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-            if ( circle.x > canvas.width ) {
+            if ( circle.x - circle.radius > canvas.width ) {
                 circle.x = 0;
             }
-            
-            // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            if (circle.x - circle.radius > canvas.width) {
-                circle.x = 0;
+            if ( circle.x + circle.radius < 0 ) {
+                circle.x = canvas.width;
             }
-            if (circle.x + circle.radius > 0) {
-                circle.y = canvas.width;
-            }
-            if (circle.x - circle.radius > canvas.height) {
+            if ( circle.y - circle.radius > canvas.height ) {
                 circle.y = 0;
             }
-            if (circle.y + circle.radius ) {
+            if ( circle.y + circle.radius < 0 ) {
                 circle.y = canvas.height;
             }
+ 
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
